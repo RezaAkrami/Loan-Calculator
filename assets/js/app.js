@@ -44,3 +44,21 @@ function calculateLoan(){
         showError('please check the numbers');
     }    
 }
+
+// ==== check numbers ==== 
+
+function showError(error){
+    document.querySelector('.loading').style.display = 'none';
+    document.querySelector('.results').style.display = 'none';
+
+    let alertError = document.createElement('div');
+    alertError.className = 'alert alert-danger';
+    alertError.textContent = error;
+
+    card.insertBefore(alertError,heading);
+
+    setTimeout(()=>{
+        document.querySelector('.alert').remove();
+    }, 3000);
+}
+
