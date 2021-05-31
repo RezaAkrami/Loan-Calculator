@@ -18,4 +18,29 @@ form.addEventListener('submit' , (e)=>{
 
     document.querySelector('.loading').style.display = 'block';
    
+    setTimeout(calculateLoan, 1000);
 });
+
+
+// calculate function 
+function calculateLoan(){
+
+    let intAmount = parseFloat(amount.value);
+    let intInterest = parseFloat(interest.value);
+    let intMonth = parseFloat(year.value) * 12;
+
+    let calInterest = (intAmount * intInterest * (intMonth+1) )/2400;
+    let calMonthlyPayment = (calInterest+intAmount)/intMonth;
+    let calTotalPayment = calInterest + intAmount ;
+
+    if(isFinite(intAmount)){
+        monthlyPayment.value = calMonthlyPayment.toFixed(2);
+        totalPayment.value = calTotalPayment.toFixed(2);
+        intrestPayment.value = calInterest.toFixed(2);
+
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.results').style.display = 'block';
+    }else{
+        showError('please check the numbers');
+    }    
+}
