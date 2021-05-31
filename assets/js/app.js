@@ -45,7 +45,7 @@ function calculateLoan(){
     }    
 }
 
-// ==== check numbers ==== 
+// check numbers 
 
 function showError(error){
     document.querySelector('.loading').style.display = 'none';
@@ -62,3 +62,8 @@ function showError(error){
     }, 3000);
 }
 
+// clear inputs 
+
+function clearInputs(){
+    window.location.reload();
+}
