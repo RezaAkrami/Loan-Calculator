@@ -9,3 +9,13 @@ let totalPayment = document.querySelector('#total-payment');
 let intrestPayment = document.querySelector('#intrest-payment');
 let card = document.querySelector('.card-body');
 let heading = document.querySelector('.heading');
+
+// form event submit
+
+form.addEventListener('submit' , (e)=>{
+
+    e.preventDefault();
+
+    document.querySelector('.loading').style.display = 'block';
+   
+});
